@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dorm Maintenance Dashboard</title>
+
+<style>
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f8;
+    display: flex;
+    height: 100vh;
+  }
+
+ 
+  .sideBar {
+    width: 300px;
+    background: linear-gradient(180deg, #035a03, #024a1b);
+    color: white;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sideBar h1 {
+    font-size: 22px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+
+  .sideBar a {
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .sideBar h2 {
+    font-size: 18px;
+    padding: 20px 30px;
+    margin: 0;
+    transition: all 0.3s ease;
+    color: white;
+  }
+
+  .sideBar h2:hover {
+    background-color: #044d20;
+    cursor: pointer;
+    color: bisque;
+  }
+
+ 
+  .mainPage {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .search input {
+    flex-grow: 1;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid rgb(200, 200, 200);
+    padding-left: 20px;
+    font-size: 16px;
+    background-color: aliceblue;
+  }
+
+  .search img {
+    height: 50px;
+    width: 85px;
+    margin-left: 20px;
+  }
+
+ 
+  .main {
+    flex: 1;
+    padding: 25px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .box {
+    background-color: white;
+    border: 2px solid #024a1b;
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    transition: 0.3s;
+  }
+
+  .box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .box p {
+    font-weight: bold;
+    color: #024a1b;
+    font-size: 20px;
+  }
+
+  select {
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+
+  #report {
+    margin-top: 40px;
+    background-color: white;
+    border: 3px solid #024a1b;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  #report p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  #available {
+    margin-top: 15px;
+    background: #f6fff6;
+    border-left: 5px solid #024a1b;
+    padding: 10px 15px;
+    border-radius: 8px;
+  }
+
+  button {
+    background-color: #035a03;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  button:hover {
+    background-color: #024a1b;
+  }
+
+  @media (max-width: 768px) {
+    .sideBar {
+      display: none;
+    }
+  }
+</style>
+</head>
+
+<body>
+ 
+  <div class="sideBar">
+    <h1>Dorm Maintenance</h1>
+    <a href="home.html"><h2>🏠 Home</h2></a>
+    <a href="report.html"><h2>📒 Report</h2></a>
+    <a href="dorm replacement.html"><h2>🛠️ Dorm Replacement</h2></a>
+    <a href="history.html"><h2>🕑 History</h2></a>
+    
+  </div>
+
+  
+  <div class="mainPage">
+    <div class="search">
+      <input type="text" placeholder="Search..." id="search2" />
+      <img src="image.png" alt="User Icon">
+    </div>
+
+   
+    <div class="main">
+      <div class="grid">
+        <div class="box">
+          <p>1st Floor</p>
+          <select id="Floor1" onchange="updateReport('Floor1')">
+            <option value="">-- Choose --</option>
+            <option value="NumberOfStudent">Number of Students</option>
+            <option value="NumberOfDorm">Number of Dorms</option>
+            <option value="NumberOfDormReserved">Dorms Reserved</option>
+            <option value="NumberOfDormAvailable">Dorms Available</option>
+          </select>
+        </div>
+
+        <div class="box">
+          <p>2nd Floor</p>
+          <select id="Floor2" onchange="updateReport('Floor2')">
+            <option value="">-- Choose --</option>
+            <option value="NumberOfStudent">Number of Students</option>
+            <option value="NumberOfDorm">Number of Dorms</option>
+            <option value="NumberOfDormReserved">Dorms Reserved</option>
+            <option value="NumberOfDormAvailable">Dorms Available</option>
+          </select>
+        </div>
+
+        <div class="box">
+          <p>3rd Floor</p>
+          <select id="Floor3" onchange="updateReport('Floor3')">
+            <option value="">-- Choose --</option>
+            <option value="NumberOfStudent">Number of Students</option>
+            <option value="NumberOfDorm">Number of Dorms</option>
+            <option value="NumberOfDormReserved">Dorms Reserved</option>
+            <option value="NumberOfDormAvailable">Dorms Available</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="report">
+        <p><strong>Dorm Replacement Report:</strong></p>
+        <div id="available"></div>
+        <p id="totals">Total Used: 0 | Total Remaining: 0</p>
+        <button onclick="resetAvailability()">🔄 Reset</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script >
+  
+
+function saveToHistory(floor, choice, value) {
+  const record = {
+    floor,
+    choice,
+    value,
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString(),
+  };
+
+  let history = JSON.parse(localStorage.getItem("dormReplacementHistory")) || [];
+  history.push(record);
+  localStorage.setItem("dormReplacementHistory", JSON.stringify(history));
+}
+
+
+const oldUpdateReport = updateReport;
+updateReport = function(floorId) {
+  oldUpdateReport(floorId);
+
+  const choice = document.getElementById(floorId).value;
+  if (choice) {
+    const floorNum = floorId.replace("Floor", "");
+    const floorLabel = floorNum === "1" ? "1st Floor" : floorNum === "2" ? "2nd Floor" : "3rd Floor";
+    const value = floorData[floorId][choice];
+    const readableChoice = choice.replace("NumberOf", "").replace(/([A-Z])/g, " $1").trim();
+
+   
+    saveToHistory(floorLabel, readableChoice, value);
+  }
+};
+
+
+
+    const floorData = {
+      Floor1: { NumberOfStudent: 90, NumberOfDorm: 4, NumberOfDormReserved: 3, NumberOfDormAvailable: 2 },
+      Floor2: { NumberOfStudent: 80, NumberOfDorm: 4, NumberOfDormReserved: 3, NumberOfDormAvailable: 1 },
+      Floor3: { NumberOfStudent: 70, NumberOfDorm: 4, NumberOfDormReserved: 1, NumberOfDormAvailable: 3 }
+    };
+
+    let usedCount = 0;
+
+    function updateReport(floorId) {
+      const choice = document.getElementById(floorId).value;
+      const availableDiv = document.getElementById("available");
+      availableDiv.innerHTML = "";
+
+      if (choice) {
+        const floorNum = floorId.replace("Floor", "");
+        const floorLabel = floorNum === "1" ? "1st" : floorNum === "2" ? "2nd" : "3rd";
+        const data = floorData[floorId][choice];
+        const readableName = choice.replace("NumberOf", "").replace(/([A-Z])/g, " $1").trim();
+
+        availableDiv.innerHTML = `<strong>${floorLabel} Floor</strong> ${readableName}: <b>${data}</b>`;
+        usedCount++;
+
+        const totalRemaining =
+          Object.values(floorData).reduce((sum, obj) => sum + Object.values(obj).reduce((a, b) => a + b, 0), 0);
+
+        document.getElementById("totals").textContent = `Total Used: ${usedCount} | Total Remaining: ${totalRemaining}`;
+      } else {
+        availableDiv.innerHTML = "<em>Please select an option.</em>";
+      }
+    }
+
+    function resetAvailability() {
+      ["Floor1", "Floor2", "Floor3"].forEach(id => document.getElementById(id).value = "");
+      document.getElementById("available").innerHTML = "";
+      usedCount = 0;
+      document.getElementById("totals").textContent = "Total Used: 0 | Total Remaining: 0";
+    }
+  </script>
+</body>
+</html>

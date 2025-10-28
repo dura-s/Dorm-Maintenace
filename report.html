@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report</title>
+
+  <style>
+     *{
+    margin: 0px;
+    padding: 0px;
+  }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f8;
+    display: flex;
+    height: 100vh;
+  }
+
+    .mainPage {
+      width: 00px;
+      height: 800px;
+      border-radius: 30px;
+      margin-left: 6px;
+      margin-top: 00px;
+      padding-top: 0px;
+      padding-bottom: 10px;
+    }
+
+    input {
+      padding-top: 15px;
+      height: 20px;
+      width: 380px;
+      justify-content: space-between;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      color: black;
+    }
+
+    label {
+      font-size: large;
+    }
+
+    .submit {
+      padding: 10px;
+      margin-left: 90px;
+      margin-top: 20px;
+      width: 250px;
+      height: 40px;
+      background-color: #023337;
+      font-size: larger;
+      color: white;
+      border-radius: 10px;
+    }
+
+    #description{
+      width: 300px;
+      height: 50px;
+    }
+
+   #issueType {
+    
+      width: 400px;
+      border-radius: 45px;
+      margin: 10px ;
+    padding: 15px;
+      height: 50px;
+      margin-left: 0px;
+     
+      border-color: rgb(246, 244, 248);
+      background-color: rgb(244, 240, 247);
+    }
+    option{
+      padding-left: 0px;
+      font-size: 15px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      background-color: white;
+
+    }
+    option:hover{
+      background-color: rgb(84, 104, 84);
+    }
+
+    .report {
+      background-color: white;
+      width: 500px;
+      height: 600px;
+      margin-left: 400px;
+      margin-top: 70px;
+      padding: 40px;
+      border-radius: 20px;
+      border: 3px solid rgb(3, 90, 3);
+    }
+
+    .page {
+      background-color:white;
+      height: 100%;
+      width: 100%;
+      display: flex;
+    }
+
+     .sideBar {
+    width: 300px;
+    background: linear-gradient(180deg, #035a03, #024a1b);
+    color: white;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+   .sideBar h1 {
+    font-size: 22px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+
+  .sideBar a {
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .sideBar h2 {
+    font-size: 18px;
+    padding: 20px 30px;
+    margin: 0;
+    transition: all 0.3s ease;
+    color: white;
+  }
+
+  .sideBar h2:hover {
+    background-color: #044d20;
+    cursor: pointer;
+    color: bisque;
+  }
+
+        h2:hover{
+            background-color: rgb(2, 74, 27);
+            color: bisque;
+
+        }
+        
+
+    a {
+      text-decoration: none;
+    }
+
+    input {
+      width: 350px;
+      height: 20px;
+      border-radius: 20px;
+      color: rgb(148, 149, 150);
+      border-color: rgb(227, 231, 234);
+      padding-left: 40px;
+      margin-top: 10px;
+      background-color: aliceblue;
+    }
+
+  
+   
+    .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    height: 45px;
+  }
+ 
+
+
+
+
+   
+    img {
+      height: 50px;
+      width: 85px;
+      padding-left: 15px;
+    }
+
+    .dorm {
+      margin-top: 10px;
+      font-size: 20px;
+      padding-left: 80px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: black;
+    }
+    .page2{
+      flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+    }
+    .search input {
+    flex-grow: 1;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid rgb(200, 200, 200);
+    padding-left: 20px;
+    font-size: 16px;
+    background-color: aliceblue;
+    width: 1250;
+    padding-top: 10px;
+    
+  }
+  #search2{
+    padding-top: 10px;
+   margin-top: 20px;
+  
+  }
+  
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="sideBar">
+      <h1>Dorm Maintenace</h1>
+      <a href="home.html"><h2>🏠 Home</h2></a>
+      <a href="report.html"><h2>📒 Report</h2></a>
+      <a href="dorm replacement.html"><h2>🛠️ Dorm Replacement</h2></a>
+      <a href="history.html"><h2>🕑 History</h2></a>
+
+    </div>
+<div class="page2" style="margin-left:00px;">
+    
+      <div class="search">
+        <input type="text" placeholder="Search..." id="search2" />
+        <img src="image.png">
+      </div>
+
+      <div class="report">
+  <h1 class="dorm">🏠 Dorm Maintenance Reporter</h1>
+
+  <form id="reportForm">
+    <label for="fullName">Full Name</label><br>
+    <input type="text" id="fullName"><br>
+
+    <label for="number">ID Number</label><br>
+    <input type="number" id="idNumber"><br>
+
+    <label for="roomNumber">Room Number</label><br>
+    <input type="number" id="roomNumber"><br>
+
+    <label for="issueType">Issue Type</label><br>
+   
+    <select id="issueType">
+      <option value="">Select issue type</option>
+      <option>Broken Light bulb</option>
+      <option>Bathroom problem</option>
+      <option>Locker problem</option>
+      <option>Window problem</option>
+      <option>Water heater not working</option>
+    </select><br>
+
+    <label for="description">Description</label><br>
+    <input type="text" id="description"><br>
+
+    <button type="submit" class="submit">Submit Report</button>
+  </form>
+
+  <p id="successMsg" style="color: green; text-align:center; margin-top:10px; display:none;">
+    Report submitted successfully!
+  </p>
+</div>
+
+    </div>
+  </div>
+  <script >
+    document.getElementById("reportForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("fullName").value.trim();
+  const id = document.getElementById("idNumber").value.trim();
+  const room = document.getElementById("roomNumber").value.trim();
+  const issue = document.getElementById("issueType").value.trim();
+  const description = document.getElementById("description").value.trim();
+
+  if (!name || !id || !room || !issue) {
+    alert(" Please fill all fields before submitting!");
+    return;
+  }
+
+  
+  const report = {
+    name,
+    id,
+    room,
+    issue,
+    description,
+    date: new Date().toLocaleString(),
+  };
+
+  const reports = JSON.parse(localStorage.getItem("reports")) || [];
+  reports.push(report);
+  localStorage.setItem("reports", JSON.stringify(reports));
+  document.getElementById("successMsg").style.display = "block"
+  this.reset();
+  setTimeout(() => {
+    document.getElementById("successMsg").style.display = "none";
+  }, 2000);
+});
+
+
+  </script>
+</body>
+</html>                                      
